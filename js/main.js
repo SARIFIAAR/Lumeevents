@@ -225,8 +225,9 @@
       .from('[data-hero="cta"] .btn', { opacity: 0, y: 24, duration: .9 * d, ease: 'power3.out', stagger: .1 }, '-=.8')
       .from('[data-hero="scroll"]', { opacity: 0, duration: .8 * d }, '-=.6')
       .from('.nav', { opacity: 0, y: -10, duration: .8 * d }, '-=.9');
-    /* the glow keeps breathing */
+    /* release the line masks so the glow can bleed, then keep it breathing */
     tl.add(() => {
+      $('.hero__title').classList.add('is-in');
       gsap.to(glowEm, { textShadow: '0 0 40px rgba(228,192,119,.55), 0 0 100px rgba(228,192,119,.25)', duration: 2.4, yoyo: true, repeat: -1, ease: 'sine.inOut' });
     });
   }
