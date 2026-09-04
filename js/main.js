@@ -200,6 +200,19 @@
     if (lenis) lenis.stop(); document.body.style.overflow = 'hidden';
   });
 
+  /* ---------- Lights on / off ---------- */
+  const themeBtn = $('#themeToggle');
+  const setTheme = (t, save) => {
+    document.documentElement.setAttribute('data-theme', t);
+    const meta = $('meta[name="theme-color"]'); if (meta) meta.setAttribute('content', t === 'light' ? '#F6F1E8' : '#0B0A0C');
+    if (save) { try { localStorage.setItem('lume-theme', t); } catch (e) {} }
+    if (hasGsap && glowEm && !document.body.classList.contains('is-loading')) startGlow();
+  };
+  if (!document.documentElement.getAttribute('data-theme')) document.documentElement.setAttribute('data-theme', 'dark');
+  if (themeBtn) themeBtn.addEventListener('click', () => {
+    setTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light', true);
+  });
+
   /* ---------- Word splitting ---------- */
   function splitWords(el, cls) {
     const words = el.textContent.trim().split(/\s+/);
@@ -213,13 +226,25 @@
   const glowEm = $('.hero__word--glow em');
   document.body.classList.add('is-loading');
 
+  const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  let breathe = null;
+  function startGlow() {
+    if (!hasGsap || !glowEm) return;
+    if (breathe) breathe.kill();
+    const g = cssVar('--glow-rgb') || '228,192,119';
+    gsap.set(glowEm, { clearProps: 'color' });
+    breathe = gsap.fromTo(glowEm,
+      { textShadow: `0 0 60px rgba(${g},.75), 0 0 120px rgba(${g},.35)` },
+      { textShadow: `0 0 40px rgba(${g},.55), 0 0 100px rgba(${g},.25)`, duration: 2.4, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+  }
   function heroIn(fast) {
     if (!hasGsap) { document.body.classList.remove('is-loading'); return; }
+    const g = cssVar('--glow-rgb') || '228,192,119';
     const tl = gsap.timeline({ onComplete: () => document.body.classList.remove('is-loading') });
     const d = fast ? .4 : 1;
     tl.from(heroWords, { yPercent: 110, opacity: 0, duration: 1.2 * d, ease: 'power4.out', stagger: .07 * d })
-      .fromTo(glowEm, { textShadow: '0 0 0px rgba(228,192,119,0)', color: '#5E574F' },
-        { textShadow: '0 0 60px rgba(228,192,119,.75), 0 0 120px rgba(228,192,119,.35)', color: '#E9D8B4', duration: 1.6 * d, ease: 'power2.inOut' }, '-=.8')
+      .fromTo(glowEm, { textShadow: `0 0 0px rgba(${g},0)`, color: cssVar('--taupe-2') },
+        { textShadow: `0 0 60px rgba(${g},.75), 0 0 120px rgba(${g},.35)`, color: cssVar('--champagne'), duration: 1.6 * d, ease: 'power2.inOut' }, '-=.8')
       .from('[data-hero="eyebrow"]', { opacity: 0, y: 10, duration: .8 * d }, '-=1.2')
       .from('[data-hero="lede"]', { opacity: 0, y: 24, duration: .9 * d, ease: 'power3.out' }, '-=1')
       .from('[data-hero="cta"] .btn', { opacity: 0, y: 24, duration: .9 * d, ease: 'power3.out', stagger: .1 }, '-=.8')
@@ -228,7 +253,7 @@
     /* release the line masks so the glow can bleed, then keep it breathing */
     tl.add(() => {
       $('.hero__title').classList.add('is-in');
-      gsap.to(glowEm, { textShadow: '0 0 40px rgba(228,192,119,.55), 0 0 100px rgba(228,192,119,.25)', duration: 2.4, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+      startGlow();
     });
   }
 
