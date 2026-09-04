@@ -217,7 +217,7 @@
     if (!hasGsap) { document.body.classList.remove('is-loading'); return; }
     const tl = gsap.timeline({ onComplete: () => document.body.classList.remove('is-loading') });
     const d = fast ? .4 : 1;
-    tl.from(heroWords, { yPercent: 110, opacity: 0, duration: 1.4 * d, ease: 'power4.out', stagger: .08 * d })
+    tl.from(heroWords, { yPercent: 110, opacity: 0, duration: 1.2 * d, ease: 'power4.out', stagger: .07 * d })
       .fromTo(glowEm, { textShadow: '0 0 0px rgba(228,192,119,0)', color: '#5E574F' },
         { textShadow: '0 0 60px rgba(228,192,119,.75), 0 0 120px rgba(228,192,119,.35)', color: '#E9D8B4', duration: 1.6 * d, ease: 'power2.inOut' }, '-=.8')
       .from('[data-hero="eyebrow"]', { opacity: 0, y: 10, duration: .8 * d }, '-=1.2')
@@ -231,7 +231,9 @@
     });
   }
 
-  if (reduced || !hasGsap || !loader) {
+  let seen = false;
+  try { seen = sessionStorage.getItem('lume-seen') === '1'; sessionStorage.setItem('lume-seen', '1'); } catch (e) {}
+  if (reduced || !hasGsap || !loader || seen) {
     if (loader) loader.remove();
     document.body.classList.remove('is-loading');
     if (hasGsap && !reduced) heroIn(true);
@@ -242,11 +244,11 @@
     const tl = gsap.timeline({
       onComplete: () => { loader.remove(); if (lenis) lenis.start(); heroIn(false); }
     });
-    tl.to(state, { v: 100, duration: 1.7, ease: 'power2.inOut', onUpdate: () => { num.textContent = Math.round(state.v); } }, 0)
-      .to(fill, { scaleX: 1, duration: 1.7, ease: 'power2.inOut' }, 0)
-      .to(word, { opacity: 1, duration: 1.7, ease: 'power2.in' }, 0)
-      .to(word, { textShadow: '0 0 40px rgba(228,192,119,.8)', color: '#E9D8B4', duration: .5 }, 1.4)
-      .to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1.1, ease: 'expo.inOut' }, 2.05);
+    tl.to(state, { v: 100, duration: 1.3, ease: 'power2.inOut', onUpdate: () => { num.textContent = Math.round(state.v); } }, 0)
+      .to(fill, { scaleX: 1, duration: 1.3, ease: 'power2.inOut' }, 0)
+      .to(word, { opacity: 1, duration: 1.3, ease: 'power2.in' }, 0)
+      .to(word, { textShadow: '0 0 40px rgba(228,192,119,.8)', color: '#E9D8B4', duration: .4 }, 1.05)
+      .to(loader, { clipPath: 'inset(0 0 100% 0)', duration: .9, ease: 'expo.inOut' }, 1.5);
     gsap.set(loader, { clipPath: 'inset(0 0 0% 0)' });
   }
 
@@ -292,6 +294,11 @@
           scrollTrigger: { containerAnimation: tween, trigger: art.parentElement, start: 'left right', end: 'right left', scrub: true } });
       });
       return () => tween.kill();
+    });
+    mm.add('(max-width: 900px)', () => {
+      const pin = $('#workPin');
+      pin.setAttribute('data-lenis-prevent-wheel', '');
+      return () => pin.removeAttribute('data-lenis-prevent-wheel');
     });
 
     /* contact glow drifts */
