@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lume Events</title>
-<meta name="description" content="Lume Events — bespoke weddings, galas and brand experiences in Dubai. Make your event glow.">
+<meta name="description" content="Lume Events — bespoke weddings, proposals, celebrations and corporate events in Dubai. Make your event glow.">
 <meta property="og:title" content="Lume Events — Make your event glow">
 <meta property="og:description" content="Bespoke events & experiences in Dubai, since 2025.">
+<meta property="og:image" content="assets/hero-candlelit.jpg">
 <meta name="theme-color" content="#0B0A0C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,9 +37,10 @@
     <span class="nav__name">Lume</span>
   </a>
   <nav class="nav__links" aria-label="Primary">
-    <a href="#services" data-magnet>Services</a>
-    <a href="#work" data-magnet>Concepts</a>
-    <a href="#process" data-magnet>Process</a>
+    <a href="#services" data-magnet>Expertise</a>
+    <a href="#work" data-magnet>Moments</a>
+    <a href="#venues" data-magnet>Venues</a>
+    <a href="#founder" data-magnet>Founder</a>
     <a href="#contact" data-magnet>Contact</a>
   </nav>
   <a class="nav__cta" href="#contact" data-magnet>Start your event</a>
@@ -49,10 +51,11 @@
 
 <div class="menu" id="menu" aria-hidden="true">
   <nav class="menu__links">
-    <a href="#services"><em>01</em>Services</a>
-    <a href="#work"><em>02</em>Concepts</a>
-    <a href="#process"><em>03</em>Process</a>
-    <a href="#contact"><em>04</em>Contact</a>
+    <a href="#services"><em>01</em>Expertise</a>
+    <a href="#work"><em>02</em>Moments</a>
+    <a href="#venues"><em>03</em>Venues</a>
+    <a href="#founder"><em>04</em>Founder</a>
+    <a href="#contact"><em>05</em>Contact</a>
   </nav>
   <div class="menu__foot">
     <a href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener">@lumeeventsae</a>
@@ -64,6 +67,7 @@
 
 <!-- ===== Hero ===== -->
 <section class="hero" id="hero">
+  <img class="hero__photo" src="assets/hero-candlelit.jpg" alt="A candlelit dinner table under stone arches" fetchpriority="high">
   <canvas class="hero__canvas" id="bokeh" aria-hidden="true"></canvas>
   <div class="hero__halo" aria-hidden="true"></div>
 
@@ -77,10 +81,10 @@
   </h1>
 
   <div class="hero__bottom">
-    <p class="hero__lede" data-hero="lede">Weddings, galas and brand moments designed around one idea: light. We shape the room, the mood and every last detail so the night feels effortless.</p>
+    <p class="hero__lede" data-hero="lede">Weddings, proposals, celebrations and corporate moments across Dubai and the UAE. Our mission is simple: create experiences that inspire, connect and celebrate life's most meaningful moments.</p>
     <div class="hero__actions" data-hero="cta">
       <a class="btn btn--gold" href="#contact" data-magnet><span>Start your event</span><i></i></a>
-      <a class="btn btn--ghost" href="#work" data-magnet><span>See the concepts</span></a>
+      <a class="btn btn--ghost" href="#work" data-magnet><span>See the moments</span></a>
     </div>
   </div>
 
@@ -93,14 +97,15 @@
 <!-- ===== Marquee ===== -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track" id="marqueeTrack">
-    <span>Weddings</span><i>✦</i><span>Galas</span><i>✦</i><span>Brand launches</span><i>✦</i><span>Private dinners</span><i>✦</i><span>Engagements</span><i>✦</i><span>Product reveals</span><i>✦</i><span>Corporate nights</span><i>✦</i>
+    <span>Weddings</span><i>✦</i><span>Proposals</span><i>✦</i><span>Corporate events</span><i>✦</i><span>Birthdays</span><i>✦</i><span>Baby showers</span><i>✦</i><span>Kids' parties</span><i>✦</i><span>Galas</span><i>✦</i><span>Fireworks &amp; drone shows</span><i>✦</i>
+    <span>Weddings</span><i>✦</i><span>Proposals</span><i>✦</i><span>Corporate events</span><i>✦</i><span>Birthdays</span><i>✦</i><span>Baby showers</span><i>✦</i><span>Kids' parties</span><i>✦</i><span>Galas</span><i>✦</i><span>Fireworks &amp; drone shows</span><i>✦</i>
   </div>
 </div>
 
 <!-- ===== Manifesto ===== -->
 <section class="manifesto" id="about">
   <p class="eyebrow" data-reveal>Our belief</p>
-  <p class="manifesto__text" id="manifesto">A great event is not decorated. It is lit. Light decides where people look, how close they stand and how long they stay. Everything else, the flowers, the drapes, the table, the music, is arranged to catch it. That is the whole craft, and it is ours.</p>
+  <p class="manifesto__text" id="manifesto">A great event is not decorated. It is lit. Light decides where people look, how close they stand and how long they stay. Everything else, the flowers, the music, the fireworks, the last surprise of the night, is arranged to catch it. That is the whole craft, and it is ours.</p>
   <div class="manifesto__meta" data-reveal>
     <span>Founded in Dubai, 2025</span>
     <span>Bespoke only. No packages.</span>
@@ -108,111 +113,151 @@
   </div>
 </section>
 
-<!-- ===== Services ===== -->
+<!-- ===== Expertise ===== -->
 <section class="services" id="services">
   <div class="section-head" data-reveal>
-    <p class="eyebrow">What we do</p>
-    <h2>Every room has a<br><em>best light.</em> We find it.</h2>
+    <p class="eyebrow">Our expertise</p>
+    <h2>Every occasion has a<br><em>best light.</em> We find it.</h2>
   </div>
 
   <ul class="svc" id="svc">
-    <li class="svc__row" data-scene="candle" data-reveal>
+    <li class="svc__row" data-img="assets/wedding-veil-arch.jpg" data-reveal>
       <span class="svc__index">Weddings</span>
-      <h3 class="svc__title">Weddings &amp; Nikah</h3>
-      <p class="svc__desc">Ceremony to last dance, designed as one continuous scene. Candlelit aisles, floral canopies, drapes that soften the room.</p>
+      <h3 class="svc__title">Weddings</h3>
+      <p class="svc__desc">Ceremony to last dance at the UAE's most prestigious venues, designed as one continuous scene. Candlelit aisles, floral canopies, entertainment timed to the minute.</p>
       <span class="svc__arrow" aria-hidden="true">→</span>
     </li>
-    <li class="svc__row" data-scene="chandelier" data-reveal>
+    <li class="svc__row" data-img="assets/proposal-ring.jpg" data-reveal>
+      <span class="svc__index">Proposals</span>
+      <h3 class="svc__title">Proposals</h3>
+      <p class="svc__desc">From an intimate beachside question to a helicopter surprise over the Burj Al Arab. Planned in secret, photographed from the first second.</p>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="svc__row" data-img="assets/corporate-talk.jpg" data-reveal>
       <span class="svc__index">Corporate</span>
-      <h3 class="svc__title">Galas &amp; Brand Moments</h3>
-      <p class="svc__desc">Launches, award nights and dinners where the brand is felt, not just printed. Staging, light and pacing built for the camera.</p>
+      <h3 class="svc__title">Corporate Events</h3>
+      <p class="svc__desc">Gala dinners, launches, award nights and hospitality where the brand is felt, not just printed. Staging, light and pacing built for the camera.</p>
       <span class="svc__arrow" aria-hidden="true">→</span>
     </li>
-    <li class="svc__row" data-scene="garden" data-reveal>
-      <span class="svc__index">Private</span>
-      <h3 class="svc__title">Private Celebrations</h3>
-      <p class="svc__desc">Birthdays, engagements, anniversaries and intimate dinners at home, on the water or in the desert.</p>
+    <li class="svc__row" data-img="assets/tablescape.jpg" data-reveal>
+      <span class="svc__index">Birthdays</span>
+      <h3 class="svc__title">Birthdays &amp; Celebrations</h3>
+      <p class="svc__desc">Milestones, anniversaries and long dinners with the people who matter, at home, on the water or under the skyline.</p>
       <span class="svc__arrow" aria-hidden="true">→</span>
     </li>
-    <li class="svc__row" data-scene="neon" data-reveal>
-      <span class="svc__index">Craft</span>
-      <h3 class="svc__title">Lighting &amp; Scenography</h3>
-      <p class="svc__desc">Our signature. Layered warm light, installations, ceiling work and the small glows nobody notices but everyone feels.</p>
+    <li class="svc__row" data-img="assets/baby-shower.jpg" data-reveal>
+      <span class="svc__index">Baby showers</span>
+      <h3 class="svc__title">Baby Showers</h3>
+      <p class="svc__desc">Soft, unhurried afternoons styled around the mother-to-be. Every detail, from the reveal to the favours, handled quietly.</p>
       <span class="svc__arrow" aria-hidden="true">→</span>
     </li>
-    <li class="svc__row" data-scene="ivory" data-reveal>
-      <span class="svc__index">Detail</span>
-      <h3 class="svc__title">Floral &amp; Styling</h3>
-      <p class="svc__desc">Arrangements, tablescapes, macramé and the macro details: the rings, the place cards, the last candle on the last table.</p>
+    <li class="svc__row" data-img="assets/kids-birthday.jpg" data-reveal>
+      <span class="svc__index">Kids</span>
+      <h3 class="svc__title">Kids' Birthdays</h3>
+      <p class="svc__desc">Themes, cakes, characters and entertainment for any mood, from elegant classics to vibrant shows. Parents get to enjoy it too.</p>
       <span class="svc__arrow" aria-hidden="true">→</span>
     </li>
   </ul>
-  <div class="svc__peek" id="svcPeek" aria-hidden="true"><canvas id="peekCanvas"></canvas></div>
+  <div class="svc__peek" id="svcPeek" aria-hidden="true"><img id="peekImg" src="assets/wedding-veil-arch.jpg" alt=""></div>
 </section>
 
-<!-- ===== Concepts (horizontal) ===== -->
+<!-- ===== Why Lume ===== -->
+<section class="pillars" id="why">
+  <div class="section-head" data-reveal>
+    <p class="eyebrow">Why Lume</p>
+    <h2>Six things we <em>never</em> compromise on.</h2>
+  </div>
+  <ul class="pillars__grid">
+    <li class="pillar" data-reveal>
+      <h3>Personalised concept &amp; design</h3>
+      <p>Every detail crafted to reflect your story and your style. Nothing off the shelf.</p>
+    </li>
+    <li class="pillar" data-reveal>
+      <h3>Unique &amp; exclusive locations</h3>
+      <p>From hidden gems to iconic venues across Dubai and the UAE. Always the perfect setting.</p>
+    </li>
+    <li class="pillar" data-reveal>
+      <h3>Entertainment for any mood</h3>
+      <p>From elegant classics to vibrant shows, live performances, fireworks and drone spectacles, tailored to your guests.</p>
+    </li>
+    <li class="pillar" data-reveal>
+      <h3>A positive atmosphere</h3>
+      <p>Smiles, emotion and a stress-free journey to your perfect event. You are a guest at your own celebration.</p>
+    </li>
+    <li class="pillar" data-reveal>
+      <h3>Tailored support</h3>
+      <p>Always here during your planning journey. One point of contact from the first call to the last candle.</p>
+    </li>
+    <li class="pillar" data-reveal>
+      <h3>Professional team &amp; partners</h3>
+      <p>A strong network of experts and trusted partners, dedicated to excellence. Every great event begins with great partnerships.</p>
+    </li>
+  </ul>
+</section>
+
+<!-- ===== Moments (horizontal) ===== -->
 <section class="work" id="work">
   <div class="work__head">
     <div class="section-head" data-reveal>
-      <p class="eyebrow">Signature concepts</p>
-      <h2>Six ways to <em>light</em> a night.</h2>
+      <p class="eyebrow">Moments</p>
+      <h2>Beautiful &amp; <em>unforgettable</em> times.</h2>
     </div>
     <p class="work__hint" data-reveal aria-hidden="true">Scroll to move →</p>
   </div>
   <div class="work__pin" id="workPin">
     <div class="work__track" id="workTrack">
-      <article class="card" data-scene="candle">
-        <canvas class="card__art"></canvas>
+      <article class="card">
+        <img class="card__art" src="assets/wedding-veil-arch.jpg" alt="A bride's veil trailing through a palace archway" loading="lazy">
         <div class="card__body">
           <span class="card__num">I</span>
-          <h3>Candlelit Nikah</h3>
-          <p>Hundreds of pillar candles, ivory drapes, a floral canopy. Warm, close, unhurried.</p>
-          <span class="card__tag">Wedding · Intimate</span>
+          <h3>The palace aisle</h3>
+          <p>A veil, an archway and afternoon light. The quietest second of the whole day.</p>
+          <span class="card__tag">Wedding</span>
         </div>
       </article>
-      <article class="card" data-scene="chandelier">
-        <canvas class="card__art"></canvas>
+      <article class="card">
+        <img class="card__art" src="assets/proposal-ring.jpg" alt="A ring being placed on a hand" loading="lazy">
         <div class="card__body">
           <span class="card__num">II</span>
-          <h3>Golden Hour Gala</h3>
-          <p>Suspended chandeliers, a mirrored runway, amber wash on every table. Built for 300.</p>
-          <span class="card__tag">Gala · Corporate</span>
+          <h3>The question</h3>
+          <p>Planned in secret for weeks. Over in a heartbeat. Captured forever.</p>
+          <span class="card__tag">Proposal</span>
         </div>
       </article>
-      <article class="card" data-scene="garden">
-        <canvas class="card__art"></canvas>
+      <article class="card">
+        <img class="card__art" src="assets/gala-showgirls.jpg" alt="Performers in feathered costumes before a gold art-deco backdrop" loading="lazy">
         <div class="card__body">
           <span class="card__num">III</span>
-          <h3>Lantern Garden</h3>
-          <p>Festoon lines through palms, lanterns at eye level, long tables under an open sky.</p>
-          <span class="card__tag">Outdoor · Dinner</span>
+          <h3>Showtime</h3>
+          <p>Gold backdrop, feathers and a live act that turns a dinner into a night.</p>
+          <span class="card__tag">Gala · Entertainment</span>
         </div>
       </article>
-      <article class="card" data-scene="neon">
-        <canvas class="card__art"></canvas>
+      <article class="card">
+        <img class="card__art" src="assets/skyline-mariachi.jpg" alt="A mariachi band performing on a terrace with the Burj Khalifa behind" loading="lazy">
         <div class="card__body">
           <span class="card__num">IV</span>
-          <h3>After Dark Reveal</h3>
-          <p>A single beam, a slow fade-up, the product at the centre. Then the room ignites.</p>
-          <span class="card__tag">Launch · Brand</span>
+          <h3>Skyline serenade</h3>
+          <p>A terrace, a band and the Burj Khalifa as the only decoration needed.</p>
+          <span class="card__tag">Private · Entertainment</span>
         </div>
       </article>
-      <article class="card" data-scene="ivory">
-        <canvas class="card__art"></canvas>
+      <article class="card">
+        <img class="card__art" src="assets/hero-candlelit.jpg" alt="Candles lining a long table under stone arches" loading="lazy">
         <div class="card__body">
           <span class="card__num">V</span>
-          <h3>Ivory Room</h3>
-          <p>All white florals, soft key light, macro details. Designed to photograph from any angle.</p>
-          <span class="card__tag">Engagement · Editorial</span>
+          <h3>Candlelit dinner</h3>
+          <p>Hundreds of candles, stone arches, one long table. Our kind of light.</p>
+          <span class="card__tag">Dinner · Styling</span>
         </div>
       </article>
-      <article class="card" data-scene="desert">
-        <canvas class="card__art"></canvas>
+      <article class="card">
+        <img class="card__art" src="assets/fireworks.jpg" alt="Gold fireworks over the city at night" loading="lazy">
         <div class="card__body">
           <span class="card__num">VI</span>
-          <h3>Desert Ember</h3>
-          <p>Fire bowls on the dunes, low seating, a majlis lit from within. Dubai's own backdrop.</p>
-          <span class="card__tag">Private · Destination</span>
+          <h3>The finale</h3>
+          <p>Fireworks and drone spectacles, timed to the last note of the last song.</p>
+          <span class="card__tag">Fireworks · Drone show</span>
         </div>
       </article>
       <article class="card card--end">
@@ -223,6 +268,24 @@
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ===== Venues ===== -->
+<section class="venues" id="venues">
+  <figure class="venues__photo" data-reveal>
+    <img src="assets/wedding-bride-veil.jpg" alt="A bride adjusting her veil" loading="lazy">
+  </figure>
+  <div class="venues__text" data-reveal>
+    <p class="eyebrow">Hotels &amp; venues</p>
+    <h2>From iconic landmarks<br>to <em>hidden gems.</em></h2>
+    <p class="venues__lede">We partner with the finest hotels and venues across Dubai and the other Emirates to bring each vision to life. Beach, desert, palace ballroom or a rooftop nobody has heard of yet: we know who to call, and we have usually already been.</p>
+    <ul class="venues__list">
+      <li>Palace &amp; five-star hotel ballrooms</li>
+      <li>Beachfront &amp; yacht celebrations</li>
+      <li>Desert camps &amp; private majlis</li>
+      <li>Rooftops with the skyline as backdrop</li>
+    </ul>
   </div>
 </section>
 
@@ -242,7 +305,7 @@
     <li class="step" data-reveal>
       <span class="step__num">02</span>
       <h3>Design</h3>
-      <p>A visual concept: light plan, florals, layout, palette and a walkthrough of the evening hour by hour. One clear budget, no surprises.</p>
+      <p>A visual concept: light plan, florals, layout, entertainment and a walkthrough of the evening hour by hour. One clear budget, no surprises.</p>
       <span class="step__time">Weeks 2–3</span>
     </li>
     <li class="step" data-reveal>
@@ -260,6 +323,22 @@
   </ol>
 </section>
 
+<!-- ===== Founder ===== -->
+<section class="founder" id="founder">
+  <div class="founder__portrait" data-reveal data-scene="candle">
+    <canvas class="founder__art"></canvas>
+    <span class="founder__caption">Alina · Founder</span>
+  </div>
+  <div class="founder__text" data-reveal>
+    <p class="eyebrow">The founder</p>
+    <h2>Alina</h2>
+    <p class="founder__role">Founder, Lume Events</p>
+    <p>Since 2020, Alina has been elevating the art of creating unforgettable moments in Dubai. Her portfolio includes everything from intimate beachside proposals to breathtaking helicopter surprises over the Burj Al Arab, as well as stunning weddings at the UAE's most prestigious venues.</p>
+    <p>She believes every great event begins with great partnerships: visionary clients and trusted partners who share one passion, turning ideas into moments that last a lifetime.</p>
+    <a class="link-arrow" href="#contact" data-magnet>Talk to Alina <span>→</span></a>
+  </div>
+</section>
+
 <!-- ===== Instagram ===== -->
 <section class="feed" id="feed">
   <div class="feed__head" data-reveal>
@@ -268,12 +347,12 @@
     <a class="link-arrow" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-magnet>@lumeeventsae <span>↗</span></a>
   </div>
   <div class="feed__grid" data-reveal>
-    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="candle"><canvas class="tile__art"></canvas><span>Candle study</span></a>
-    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="ivory"><canvas class="tile__art"></canvas><span>Ivory tablescape</span></a>
-    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="chandelier"><canvas class="tile__art"></canvas><span>Ceiling install</span></a>
-    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="garden"><canvas class="tile__art"></canvas><span>Festoon lines</span></a>
-    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="desert"><canvas class="tile__art"></canvas><span>Ember majlis</span></a>
-    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="neon"><canvas class="tile__art"></canvas><span>Reveal beam</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener"><img class="tile__art" src="assets/wedding-shoes.jpg" alt="Bridal shoes on tulle" loading="lazy"><span>Bridal details</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener"><img class="tile__art" src="assets/wedding-bride-veil.jpg" alt="A bride with her veil" loading="lazy"><span>The veil</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener"><img class="tile__art" src="assets/tablescape.jpg" alt="A colourful garden tablescape" loading="lazy"><span>Tablescape</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener"><img class="tile__art" src="assets/baby-shower.jpg" alt="An expectant mother in white" loading="lazy"><span>Baby shower</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener"><img class="tile__art" src="assets/kids-birthday.jpg" alt="A child in a party hat with a birthday cake" loading="lazy"><span>Kids' birthday</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener"><img class="tile__art" src="assets/fireworks.jpg" alt="Fireworks over the city" loading="lazy"><span>The finale</span></a>
   </div>
 </section>
 
@@ -297,7 +376,7 @@
     <div class="field__row">
       <div class="field"><label for="f-type">Occasion</label>
         <select id="f-type" name="occasion">
-          <option>Wedding</option><option>Gala or corporate</option><option>Private celebration</option><option>Brand launch</option><option>Something else</option>
+          <option>Wedding</option><option>Proposal</option><option>Corporate event</option><option>Birthday or celebration</option><option>Baby shower</option><option>Kids' birthday</option><option>Something else</option>
         </select>
       </div>
       <div class="field"><label for="f-date">Date</label><input id="f-date" name="date" type="date"></div>
@@ -322,7 +401,7 @@
       <a href="mailto:hello@lumeevents.ae">Email</a>
       <a href="#top" id="toTop">Back to top ↑</a>
     </nav>
-    <span class="footer__tag">Make your event glow ✦</span>
+    <span class="footer__tag">Planned. Styled. Lit. ✦</span>
   </div>
 </footer>
 

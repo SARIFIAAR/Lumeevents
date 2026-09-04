@@ -88,7 +88,7 @@
   }
 
   function paintAllStatic() {
-    $$('canvas.card__art, canvas.tile__art').forEach((c, i) => {
+    $$('canvas.card__art, canvas.tile__art, canvas.founder__art').forEach((c, i) => {
       const name = c.closest('[data-scene]').dataset.scene;
       paintStatic(c, name, 11 + i * 7);
     });
@@ -273,6 +273,9 @@
       });
     }
 
+    /* hero photo drifts slower than the page */
+    gsap.to('.hero__photo', { yPercent: 12, scale: 1.06, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
     /* hero parallax out */
     gsap.to('.hero__title', { yPercent: 18, opacity: .2, ease: 'none',
       scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
@@ -314,20 +317,26 @@
   }
   if (!hasGsap || reduced) { const m = $('#manifesto'); if (m) m.style.color = '#F5EFE4'; }
 
-  /* ---------- Service peek: a light study follows the cursor ---------- */
-  const peek = $('#svcPeek'), peekCanvas = $('#peekCanvas');
+  /* ---------- Service peek: a photo follows the cursor ---------- */
+  const peek = $('#svcPeek'), peekImg = $('#peekImg');
   if (fine && !reduced && peek) {
-    let px = 0, py = 0, cx = 0, cy = 0, on = false, current = '';
-    const rows = $$('.svc__row');
-    rows.forEach((row) => {
-      row.addEventListener('mouseenter', () => {
-        const name = row.dataset.scene;
-        if (name !== current) { current = name; paintStatic(peekCanvas, name, 42); }
+    let px = 0, py = 0, cx = 0, cy = 0, on = false;
+    const hide = () => { on = false; peek.classList.remove('is-on'); };
+    $$('.svc__row').forEach((row) => {
+      row.addEventListener('mouseenter', (e) => {
+        if (row.dataset.img && peekImg.getAttribute('src') !== row.dataset.img) peekImg.src = row.dataset.img;
+        cx = e.clientX + 160; cy = e.clientY;
+        if (!on) { px = cx; py = cy; }
         on = true; peek.classList.add('is-on');
       });
-      row.addEventListener('mouseleave', () => { on = false; peek.classList.remove('is-on'); });
+      row.addEventListener('mouseleave', hide);
     });
-    $('#svc').addEventListener('mousemove', (e) => { cx = e.clientX + 160; cy = e.clientY; });
+    const svc = $('#svc');
+    svc.addEventListener('mousemove', (e) => { cx = e.clientX + 160; cy = e.clientY; });
+    svc.addEventListener('mouseleave', hide);
+    /* the list can scroll out from under a resting pointer */
+    const checkStill = () => { if (!on) return; const r = svc.getBoundingClientRect(); const x = cx - 160; if (x < r.left || x > r.right || cy < r.top || cy > r.bottom) hide(); };
+    if (lenis) lenis.on('scroll', checkStill); else window.addEventListener('scroll', checkStill, { passive: true });
     const follow = () => {
       px += (cx - px) * .12; py += (cy - py) * .12;
       if (on) peek.style.left = px + 'px', peek.style.top = py + 'px';

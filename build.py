@@ -13,5 +13,12 @@ html = html.replace('<script src="js/main.js"></script>', '<script>\n' + js + '\
 head = re.search(r'<head>(.*?)</head>', html, re.S).group(1)
 body = re.search(r'<body>(.*?)</body>', html, re.S).group(1)
 head = re.sub(r'<meta (charset|name="viewport")[^>]*>\s*', '', head)
+import base64, shutil
+def inline(m):
+    p = root / m.group(2)
+    if not p.exists(): return m.group(0)
+    return m.group(1) + 'data:image/jpeg;base64,' + base64.b64encode(p.read_bytes()).decode() + '"'
+body = re.sub(r'((?:src|data-img)=")(assets/[^"]+)"', inline, body)
+shutil.copytree(root / 'assets', root / 'dist/assets', dirs_exist_ok=True)
 (root / 'dist/artifact.html').write_text(head.strip() + '\n' + body.strip() + '\n')
 print('built dist/index.html and dist/artifact.html')
