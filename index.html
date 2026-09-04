@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lume Events</title>
+<meta name="description" content="Lume Events — bespoke weddings, galas and brand experiences in Dubai. Make your event glow.">
+<meta property="og:title" content="Lume Events — Make your event glow">
+<meta property="og:description" content="Bespoke events & experiences in Dubai, since 2025.">
+<meta name="theme-color" content="#0B0A0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Preloader: the dimmer ===== -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <div class="loader__word">LUME</div>
+    <div class="loader__meter"><span class="loader__fill" id="loaderFill"></span></div>
+    <div class="loader__count"><span id="loaderNum">0</span><small>lumens</small></div>
+  </div>
+</div>
+
+<!-- ===== Cursor light ===== -->
+<div class="light" id="light" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ===== Nav ===== -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="Lume Events home">
+    <span class="nav__mark" aria-hidden="true"></span>
+    <span class="nav__name">Lume</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#services" data-magnet>Services</a>
+    <a href="#work" data-magnet>Concepts</a>
+    <a href="#process" data-magnet>Process</a>
+    <a href="#contact" data-magnet>Contact</a>
+  </nav>
+  <a class="nav__cta" href="#contact" data-magnet>Start your event</a>
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__links">
+    <a href="#services"><em>01</em>Services</a>
+    <a href="#work"><em>02</em>Concepts</a>
+    <a href="#process"><em>03</em>Process</a>
+    <a href="#contact"><em>04</em>Contact</a>
+  </nav>
+  <div class="menu__foot">
+    <a href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener">@lumeeventsae</a>
+    <span>Dubai, UAE</span>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="hero">
+  <canvas class="hero__canvas" id="bokeh" aria-hidden="true"></canvas>
+  <div class="hero__halo" aria-hidden="true"></div>
+
+  <div class="hero__top">
+    <p class="eyebrow hero__eyebrow" data-hero="eyebrow">Bespoke events &amp; experiences <span class="dot"></span> Dubai <span class="dot"></span> Since 2025</p>
+  </div>
+
+  <h1 class="hero__title" aria-label="Make your event glow.">
+    <span class="hero__line"><span class="hero__word" data-hero="w">Make</span> <span class="hero__word" data-hero="w">your</span></span>
+    <span class="hero__line"><span class="hero__word" data-hero="w">event</span> <span class="hero__word hero__word--glow" data-hero="w"><em>glow.</em></span></span>
+  </h1>
+
+  <div class="hero__bottom">
+    <p class="hero__lede" data-hero="lede">Weddings, galas and brand moments designed around one idea: light. We shape the room, the mood and every last detail so the night feels effortless.</p>
+    <div class="hero__actions" data-hero="cta">
+      <a class="btn btn--gold" href="#contact" data-magnet><span>Start your event</span><i></i></a>
+      <a class="btn btn--ghost" href="#work" data-magnet><span>See the concepts</span></a>
+    </div>
+  </div>
+
+  <div class="hero__scroll" data-hero="scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <span class="hero__scroll-line"></span>
+  </div>
+</section>
+
+<!-- ===== Marquee ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marqueeTrack">
+    <span>Weddings</span><i>✦</i><span>Galas</span><i>✦</i><span>Brand launches</span><i>✦</i><span>Private dinners</span><i>✦</i><span>Engagements</span><i>✦</i><span>Product reveals</span><i>✦</i><span>Corporate nights</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ===== Manifesto ===== -->
+<section class="manifesto" id="about">
+  <p class="eyebrow" data-reveal>Our belief</p>
+  <p class="manifesto__text" id="manifesto">A great event is not decorated. It is lit. Light decides where people look, how close they stand and how long they stay. Everything else, the flowers, the drapes, the table, the music, is arranged to catch it. That is the whole craft, and it is ours.</p>
+  <div class="manifesto__meta" data-reveal>
+    <span>Founded in Dubai, 2025</span>
+    <span>Bespoke only. No packages.</span>
+    <span>One team, start to finish</span>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="services" id="services">
+  <div class="section-head" data-reveal>
+    <p class="eyebrow">What we do</p>
+    <h2>Every room has a<br><em>best light.</em> We find it.</h2>
+  </div>
+
+  <ul class="svc" id="svc">
+    <li class="svc__row" data-scene="candle" data-reveal>
+      <span class="svc__index">Weddings</span>
+      <h3 class="svc__title">Weddings &amp; Nikah</h3>
+      <p class="svc__desc">Ceremony to last dance, designed as one continuous scene. Candlelit aisles, floral canopies, drapes that soften the room.</p>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="svc__row" data-scene="chandelier" data-reveal>
+      <span class="svc__index">Corporate</span>
+      <h3 class="svc__title">Galas &amp; Brand Moments</h3>
+      <p class="svc__desc">Launches, award nights and dinners where the brand is felt, not just printed. Staging, light and pacing built for the camera.</p>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="svc__row" data-scene="garden" data-reveal>
+      <span class="svc__index">Private</span>
+      <h3 class="svc__title">Private Celebrations</h3>
+      <p class="svc__desc">Birthdays, engagements, anniversaries and intimate dinners at home, on the water or in the desert.</p>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="svc__row" data-scene="neon" data-reveal>
+      <span class="svc__index">Craft</span>
+      <h3 class="svc__title">Lighting &amp; Scenography</h3>
+      <p class="svc__desc">Our signature. Layered warm light, installations, ceiling work and the small glows nobody notices but everyone feels.</p>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="svc__row" data-scene="ivory" data-reveal>
+      <span class="svc__index">Detail</span>
+      <h3 class="svc__title">Floral &amp; Styling</h3>
+      <p class="svc__desc">Arrangements, tablescapes, macramé and the macro details: the rings, the place cards, the last candle on the last table.</p>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+  </ul>
+  <div class="svc__peek" id="svcPeek" aria-hidden="true"><canvas id="peekCanvas"></canvas></div>
+</section>
+
+<!-- ===== Concepts (horizontal) ===== -->
+<section class="work" id="work">
+  <div class="work__head">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Signature concepts</p>
+      <h2>Six ways to <em>light</em> a night.</h2>
+    </div>
+    <p class="work__hint" data-reveal aria-hidden="true">Scroll to move →</p>
+  </div>
+  <div class="work__pin" id="workPin">
+    <div class="work__track" id="workTrack">
+      <article class="card" data-scene="candle">
+        <canvas class="card__art"></canvas>
+        <div class="card__body">
+          <span class="card__num">I</span>
+          <h3>Candlelit Nikah</h3>
+          <p>Hundreds of pillar candles, ivory drapes, a floral canopy. Warm, close, unhurried.</p>
+          <span class="card__tag">Wedding · Intimate</span>
+        </div>
+      </article>
+      <article class="card" data-scene="chandelier">
+        <canvas class="card__art"></canvas>
+        <div class="card__body">
+          <span class="card__num">II</span>
+          <h3>Golden Hour Gala</h3>
+          <p>Suspended chandeliers, a mirrored runway, amber wash on every table. Built for 300.</p>
+          <span class="card__tag">Gala · Corporate</span>
+        </div>
+      </article>
+      <article class="card" data-scene="garden">
+        <canvas class="card__art"></canvas>
+        <div class="card__body">
+          <span class="card__num">III</span>
+          <h3>Lantern Garden</h3>
+          <p>Festoon lines through palms, lanterns at eye level, long tables under an open sky.</p>
+          <span class="card__tag">Outdoor · Dinner</span>
+        </div>
+      </article>
+      <article class="card" data-scene="neon">
+        <canvas class="card__art"></canvas>
+        <div class="card__body">
+          <span class="card__num">IV</span>
+          <h3>After Dark Reveal</h3>
+          <p>A single beam, a slow fade-up, the product at the centre. Then the room ignites.</p>
+          <span class="card__tag">Launch · Brand</span>
+        </div>
+      </article>
+      <article class="card" data-scene="ivory">
+        <canvas class="card__art"></canvas>
+        <div class="card__body">
+          <span class="card__num">V</span>
+          <h3>Ivory Room</h3>
+          <p>All white florals, soft key light, macro details. Designed to photograph from any angle.</p>
+          <span class="card__tag">Engagement · Editorial</span>
+        </div>
+      </article>
+      <article class="card" data-scene="desert">
+        <canvas class="card__art"></canvas>
+        <div class="card__body">
+          <span class="card__num">VI</span>
+          <h3>Desert Ember</h3>
+          <p>Fire bowls on the dunes, low seating, a majlis lit from within. Dubai's own backdrop.</p>
+          <span class="card__tag">Private · Destination</span>
+        </div>
+      </article>
+      <article class="card card--end">
+        <div class="card__body card__body--end">
+          <p class="eyebrow">Your event</p>
+          <h3>None of these.<br><em>Yours.</em></h3>
+          <a class="btn btn--gold" href="#contact" data-magnet><span>Design it with us</span><i></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Process ===== -->
+<section class="process" id="process">
+  <div class="section-head" data-reveal>
+    <p class="eyebrow">How it works</p>
+    <h2>From first call<br>to <em>last candle.</em></h2>
+  </div>
+  <ol class="steps">
+    <li class="step" data-reveal>
+      <span class="step__num">01</span>
+      <h3>Listen</h3>
+      <p>A conversation about the people, the occasion and the feeling you want in the room. No brief required. We ask the questions.</p>
+      <span class="step__time">Week 1</span>
+    </li>
+    <li class="step" data-reveal>
+      <span class="step__num">02</span>
+      <h3>Design</h3>
+      <p>A visual concept: light plan, florals, layout, palette and a walkthrough of the evening hour by hour. One clear budget, no surprises.</p>
+      <span class="step__time">Weeks 2–3</span>
+    </li>
+    <li class="step" data-reveal>
+      <span class="step__num">03</span>
+      <h3>Build</h3>
+      <p>Venue, suppliers, production and permits handled by one team. You approve, we run. Rehearsed to the minute.</p>
+      <span class="step__time">Up to the day</span>
+    </li>
+    <li class="step" data-reveal>
+      <span class="step__num">04</span>
+      <h3>Glow</h3>
+      <p>On the night, we are in the room. Cues, timing, guests, weather. You are a guest at your own event.</p>
+      <span class="step__time">The night</span>
+    </li>
+  </ol>
+</section>
+
+<!-- ===== Instagram ===== -->
+<section class="feed" id="feed">
+  <div class="feed__head" data-reveal>
+    <p class="eyebrow">Behind the scenes</p>
+    <h2>Follow the <em>glow.</em></h2>
+    <a class="link-arrow" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-magnet>@lumeeventsae <span>↗</span></a>
+  </div>
+  <div class="feed__grid" data-reveal>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="candle"><canvas class="tile__art"></canvas><span>Candle study</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="ivory"><canvas class="tile__art"></canvas><span>Ivory tablescape</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="chandelier"><canvas class="tile__art"></canvas><span>Ceiling install</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="garden"><canvas class="tile__art"></canvas><span>Festoon lines</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="desert"><canvas class="tile__art"></canvas><span>Ember majlis</span></a>
+    <a class="tile" href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-scene="neon"><canvas class="tile__art"></canvas><span>Reveal beam</span></a>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact" id="contact">
+  <div class="contact__glow" aria-hidden="true"></div>
+  <div class="contact__left" data-reveal>
+    <p class="eyebrow">Start your event</p>
+    <h2 class="contact__title">Let's make<br>it <em>glow.</em></h2>
+    <p class="contact__lede">Tell us the date and the feeling. We reply within one working day with a first idea and a call time.</p>
+    <ul class="contact__list">
+      <li><span>Email</span><a href="mailto:hello@lumeevents.ae" data-magnet>hello@lumeevents.ae</a></li>
+      <li><span>WhatsApp</span><a href="https://wa.me/971500000000" target="_blank" rel="noopener" data-magnet>+971 50 000 0000</a></li>
+      <li><span>Instagram</span><a href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener" data-magnet>@lumeeventsae</a></li>
+      <li><span>Based in</span><b>Dubai, United Arab Emirates</b></li>
+    </ul>
+  </div>
+  <form class="form" data-reveal action="mailto:hello@lumeevents.ae" method="post" enctype="text/plain" id="enquiry">
+    <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+    <div class="field"><label for="f-email">Email or phone</label><input id="f-email" name="contact" type="text" autocomplete="email" required></div>
+    <div class="field__row">
+      <div class="field"><label for="f-type">Occasion</label>
+        <select id="f-type" name="occasion">
+          <option>Wedding</option><option>Gala or corporate</option><option>Private celebration</option><option>Brand launch</option><option>Something else</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-date">Date</label><input id="f-date" name="date" type="date"></div>
+    </div>
+    <div class="field"><label for="f-guests">Guests</label><input id="f-guests" name="guests" type="number" min="2" placeholder="120"></div>
+    <div class="field"><label for="f-msg">The feeling you want</label><textarea id="f-msg" name="message" rows="4" placeholder="Warm, intimate, candlelit. Family of 80, on the water."></textarea></div>
+    <button class="btn btn--gold btn--wide" type="submit" data-magnet><span>Send enquiry</span><i></i></button>
+    <p class="form__note">We never share your details. Replies within one working day.</p>
+  </form>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer__big" aria-hidden="true">LUME</div>
+  <div class="footer__row">
+    <span>© 2026 Lume Events · Dubai, UAE</span>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.threads.net/@lumeeventsae" target="_blank" rel="noopener">Threads</a>
+      <a href="mailto:hello@lumeevents.ae">Email</a>
+      <a href="#top" id="toTop">Back to top ↑</a>
+    </nav>
+    <span class="footer__tag">Make your event glow ✦</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
