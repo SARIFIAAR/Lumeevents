@@ -150,7 +150,13 @@ h3{font-size:clamp(26px,2.6vw,36px)}
 .nav__brand{display:flex;align-items:center;gap:12px;justify-self:start}
 .nav__mark{width:10px;height:10px;border-radius:50%;background:var(--gold-2);box-shadow:0 0 14px 2px rgba(228,192,119,.7);animation:pulse 3s ease-in-out infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 12px 2px rgba(228,192,119,.55)}50%{box-shadow:0 0 22px 6px rgba(228,192,119,.85)}}
-.nav__name{font-family:var(--display);font-size:24px;letter-spacing:.18em;padding-left:.18em}
+.nav__name{
+  font-family:var(--display);font-size:26px;line-height:1;letter-spacing:.3em;padding-left:.05em;font-weight:500;
+  color:transparent;-webkit-text-stroke:.6px var(--stroke);
+  background:linear-gradient(180deg,var(--ivory) 20%,var(--gold) 100%);-webkit-background-clip:text;background-clip:text;
+  filter:drop-shadow(0 0 10px rgba(var(--glow-rgb),.35));transition:filter .4s;
+}
+.nav__brand:hover .nav__name{filter:drop-shadow(0 0 16px rgba(var(--glow-rgb),.7))}
 .nav__links{display:flex;gap:34px;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--taupe)}
 .nav__links a{position:relative;padding:6px 0;transition:color .3s;display:inline-block}
 .nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
