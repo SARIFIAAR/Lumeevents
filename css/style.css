@@ -449,3 +449,6 @@ h3{font-size:clamp(26px,2.6vw,36px)}
   .light,.cursor,.grain{display:none}
   .manifesto__text .w{opacity:1}
 }
+
+/* nav button never wraps */
+.nav__cta{white-space:nowrap}
