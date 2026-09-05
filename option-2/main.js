@@ -105,14 +105,16 @@
     const setChapter = (i) => {
       items.forEach((el, k) => el.classList.toggle('is-active', k === i));
       imgs.forEach((el, k) => el.classList.toggle('is-active', k === i));
-      const p = palettes[i]; if (silk()) silk().set({ a: p.slice(0, 3), b: p.slice(3), amp: .9 + i * .25 });
+      const p = palettes[i]; if (silk()) { silk().set({ a: p.slice(0, 3), b: p.slice(3), amp: 1 }); silk().form(['rings', 'heart', 'burj', 'burst'][i]); }
     };
     ScrollTrigger.matchMedia({
       '(min-width: 901px)': () => {
         ScrollTrigger.create({
           trigger: chaptersEl, start: 'top top', end: '+=' + (items.length * 90) + '%', pin: '#chaptersPin', scrub: true, anticipatePin: 1,
           onUpdate: (self) => { const i = Math.min(items.length - 1, Math.floor(self.progress * items.length)); setChapter(i); bar.style.transform = `scaleX(${self.progress})`; },
-          onLeave: () => silk() && silk().set({ a: [.055, .23, .19], b: [.95, .84, .8], amp: .7 }),
+          onLeave: () => { if (silk()) { silk().set({ a: [.80, .62, .30], b: [.97, .86, .78], amp: .6 }); silk().form('swarm'); } },
+          onEnter: () => setChapter(0),
+          onLeaveBack: () => { if (silk()) { silk().set({ a: [.80, .62, .30], b: [.97, .86, .78], amp: 1 }); silk().form('swarm'); } },
           onEnterBack: () => setChapter(items.length - 1),
         });
       },
@@ -158,9 +160,10 @@
     const fb = $('#footerBig');
     gsap.to(fb, { '--fill': '100%', ease: 'none', scrollTrigger: { trigger: '.footer', start: 'top 90%', end: 'bottom bottom', scrub: true } });
 
-    /* silk reacts to sections */
-    ScrollTrigger.create({ trigger: '.founder', start: 'top 60%', end: 'bottom 40%', onEnter: () => silk() && silk().set({ a: [.95, .84, .8], b: [.06, .23, .19], amp: .5 }), onLeaveBack: () => silk() && silk().set({ a: [.055, .23, .19], b: [.95, .84, .8], amp: .7 }) });
-    ScrollTrigger.create({ trigger: '.contact', start: 'top 60%', onEnter: () => silk() && silk().set({ a: [.055, .23, .19], b: [.95, .84, .8], amp: 1.1 }), onLeaveBack: () => silk() && silk().set({ a: [.95, .84, .8], b: [.06, .23, .19], amp: .5 }) });
+    /* the drones react to sections: dim behind the founder, spell LUME at the footer */
+    ScrollTrigger.create({ trigger: '.founder', start: 'top 60%', end: 'bottom 40%', onEnter: () => silk() && silk().set({ a: [.06, .23, .19], b: [.99, .93, .9], amp: .35 }), onLeaveBack: () => silk() && silk().set({ a: [.80, .62, .30], b: [.97, .86, .78], amp: .6 }) });
+    ScrollTrigger.create({ trigger: '.contact', start: 'top 60%', onEnter: () => silk() && silk().set({ a: [.80, .62, .30], b: [.97, .86, .78], amp: .6 }), onLeaveBack: () => silk() && silk().set({ a: [.06, .23, .19], b: [.99, .93, .9], amp: .35 }) });
+    ScrollTrigger.create({ trigger: '.footer', start: 'top 70%', onEnter: () => { if (silk()) { silk().set({ a: [.06, .23, .19], b: [.95, .84, .8], amp: 1 }); silk().form('lume'); } }, onLeaveBack: () => { if (silk()) { silk().set({ a: [.80, .62, .30], b: [.97, .86, .78], amp: .6 }); silk().form('swarm'); } } });
 
     if (document.fonts) document.fonts.ready.then(() => ScrollTrigger.refresh());
   } else {

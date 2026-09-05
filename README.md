@@ -13,7 +13,7 @@ build.py        optional: inlines css/js into dist/ for a single-file deploy
 
 ## Two concepts
 - **Concept 1** (root): dark stage, Bodoni, cursor light, Three.js particle hero. Live: https://sarifiaar.github.io/Lumeevents/
-- **Concept 2** (`option-2/`): light, sculptural, Bricolage Grotesque, a Three.js confetti-and-petal burst behind the whole page, curtain intro, pinned chapters, stacked process cards. Live: https://sarifiaar.github.io/Lumeevents/option-2/
+- **Concept 2** (`option-2/`): light, sculptural, Bricolage Grotesque, a Three.js drone show behind the whole page (a swarm that forms rings, a heart, the Burj Khalifa, a starburst and the LUME wordmark as you scroll), curtain intro, pinned chapters, stacked process cards. Live: https://sarifiaar.github.io/Lumeevents/option-2/
 
 ## Stack
 - [GSAP 3.13](https://gsap.com) + ScrollTrigger + SplitText (free since 3.13), [Lenis](https://lenis.darkroom.engineering) smooth scroll (CDN, pinned versions)

@@ -195,7 +195,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.95;letter-spaci
 .field select{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23121110' stroke-width='1.5'/></svg>") no-repeat right center}
 
 /* ---------- footer ---------- */
-.footer{position:relative;z-index:1;padding:40px var(--gutter) 24px;background:var(--ink);color:var(--pearl);border-radius:40px 40px 0 0;overflow:hidden}
+.footer{position:relative;z-index:1;padding:40px var(--gutter) 24px;background:rgba(18,17,16,.92);color:var(--pearl);border-radius:40px 40px 0 0;overflow:hidden}
 .footer__big{font-family:var(--display);font-weight:800;font-size:clamp(120px,27vw,440px);line-height:.78;letter-spacing:-.05em;text-align:center;font-variation-settings:"wdth" 75;
   color:transparent;-webkit-text-stroke:1px rgba(244,241,235,.35);position:relative;margin-bottom:28px}
 .footer__big::after{content:attr(data-text);position:absolute;inset:0;color:var(--blush);-webkit-text-stroke:0;clip-path:inset(0 calc(100% - var(--fill,0%)) 0 0)}
