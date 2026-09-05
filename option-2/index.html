@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lume Events — Concept 2</title>
+<meta name="description" content="Lume Events, concept 2. Weddings, proposals and brand moments in Dubai, unforgettable by design.">
+<meta name="theme-color" content="#F4F1EB">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="curtain" aria-hidden="true"><div class="curtain__l"></div><div class="curtain__r"></div><div class="curtain__word">LUME</div></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__label" id="cursorLabel">View</span></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<canvas class="silk" id="silk" aria-hidden="true"></canvas>
+
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">LUME</a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#chapters">What we do</a>
+    <a href="#moments">Moments</a>
+    <a href="#process">Process</a>
+    <a href="#founder">Founder</a>
+  </nav>
+  <a class="pill pill--ink" href="#contact" data-magnet><span>Book a call</span></a>
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="#chapters">What we do</a><a href="#moments">Moments</a><a href="#process">Process</a><a href="#founder">Founder</a><a href="#contact">Book a call</a>
+</div>
+
+<main id="top">
+
+<section class="hero" id="hero">
+  <p class="hero__eyebrow" data-hero="eyebrow"><span>Lume Events</span><span>Dubai</span><span>Est. 2025</span></p>
+  <h1 class="hero__title" id="heroTitle">Unforgettable,<br>by design.</h1>
+  <div class="hero__foot">
+    <p class="hero__lede" data-hero="lede">Weddings, proposals and brand moments produced end to end by one team. We handle the venue, the light, the music and the last surprise of the night, so you only have to be there.</p>
+    <div class="hero__cta" data-hero="cta">
+      <a class="pill pill--ink pill--lg" href="#contact" data-magnet><span>Start planning</span></a>
+      <a class="pill pill--ghost pill--lg" href="#moments" data-magnet><span>See the moments</span></a>
+    </div>
+  </div>
+  <div class="hero__hint" data-hero="hint" aria-hidden="true"><span></span></div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track" id="ticker">
+    <span>Weddings</span><span>Proposals</span><span>Corporate events</span><span>Birthdays</span><span>Baby showers</span><span>Kids' parties</span><span>Galas</span><span>Fireworks &amp; drone shows</span>
+    <span>Weddings</span><span>Proposals</span><span>Corporate events</span><span>Birthdays</span><span>Baby showers</span><span>Kids' parties</span><span>Galas</span><span>Fireworks &amp; drone shows</span>
+  </div>
+</div>
+
+<!-- Chapters: pinned storytelling -->
+<section class="chapters" id="chapters">
+  <div class="chapters__pin" id="chaptersPin">
+    <div class="chapters__text">
+      <p class="label">What we do</p>
+      <ol class="chapters__list" id="chapterList">
+        <li class="chapter is-active" data-i="0"><span class="chapter__n">01</span><h2>Weddings</h2><p>Ceremony to last dance at the UAE's most prestigious venues, designed as one continuous scene.</p></li>
+        <li class="chapter" data-i="1"><span class="chapter__n">02</span><h2>Proposals</h2><p>From an intimate beachside question to a helicopter surprise over the Burj Al Arab. Planned in secret, captured from the first second.</p></li>
+        <li class="chapter" data-i="2"><span class="chapter__n">03</span><h2>Corporate</h2><p>Galas, launches and award nights where the brand is felt, not just printed. Built for the camera.</p></li>
+        <li class="chapter" data-i="3"><span class="chapter__n">04</span><h2>Celebrations</h2><p>Birthdays, baby showers and kids' parties with entertainment for any mood, from elegant classics to vibrant shows.</p></li>
+      </ol>
+      <div class="chapters__bar" aria-hidden="true"><span id="chapterBar"></span></div>
+    </div>
+    <div class="chapters__media" id="chapterMedia">
+      <figure class="chapters__img is-active"><img src="../assets/wedding-veil-arch.jpg" alt="A bride's veil trailing through a palace archway"></figure>
+      <figure class="chapters__img"><img src="../assets/proposal-ring.jpg" alt="A ring being placed on a hand"></figure>
+      <figure class="chapters__img"><img src="../assets/gala-showgirls.jpg" alt="Performers before a gold art-deco backdrop"></figure>
+      <figure class="chapters__img"><img src="../assets/tablescape.jpg" alt="A colourful garden tablescape"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Manifesto -->
+<section class="statement">
+  <p class="statement__text" id="statement">We are a production house, not a decorator. One team owns the venue, the light, the sound, the entertainment and the timing, so the night runs like it was rehearsed. Because it was.</p>
+</section>
+
+<!-- Moments -->
+<section class="moments" id="moments">
+  <div class="moments__head">
+    <p class="label">Moments</p>
+    <h2 class="h-big">Proof, not promises.</h2>
+  </div>
+  <div class="grid">
+    <a class="moment moment--tall" href="#contact" data-cursor="View"><figure><img src="../assets/hero-candlelit.jpg" alt="Candles lining a long table under stone arches" loading="lazy"></figure><span class="moment__cap"><b>Candlelit dinner</b><i>Styling</i></span></a>
+    <a class="moment" href="#contact" data-cursor="View"><figure><img src="../assets/skyline-mariachi.jpg" alt="A mariachi band under the Burj Khalifa" loading="lazy"></figure><span class="moment__cap"><b>Skyline serenade</b><i>Entertainment</i></span></a>
+    <a class="moment" href="#contact" data-cursor="View"><figure><img src="../assets/fireworks.jpg" alt="Gold fireworks over the city" loading="lazy"></figure><span class="moment__cap"><b>The finale</b><i>Fireworks</i></span></a>
+    <a class="moment moment--wide" href="#contact" data-cursor="View"><figure><img src="../assets/gala-showgirls.jpg" alt="Performers before a gold backdrop" loading="lazy"></figure><span class="moment__cap"><b>Showtime</b><i>Gala</i></span></a>
+    <a class="moment" href="#contact" data-cursor="View"><figure><img src="../assets/wedding-shoes.jpg" alt="Bridal shoes on tulle" loading="lazy"></figure><span class="moment__cap"><b>Bridal details</b><i>Wedding</i></span></a>
+    <a class="moment moment--tall" href="#contact" data-cursor="View"><figure><img src="../assets/wedding-bride-veil.jpg" alt="A bride adjusting her veil" loading="lazy"></figure><span class="moment__cap"><b>The veil</b><i>Wedding</i></span></a>
+    <a class="moment" href="#contact" data-cursor="View"><figure><img src="../assets/baby-shower.jpg" alt="An expectant mother in white" loading="lazy"></figure><span class="moment__cap"><b>Baby shower</b><i>Celebration</i></span></a>
+    <a class="moment" href="#contact" data-cursor="View"><figure><img src="../assets/kids-birthday.jpg" alt="A child in a party hat with a cake" loading="lazy"></figure><span class="moment__cap"><b>Kids' birthday</b><i>Celebration</i></span></a>
+    <a class="moment" href="#contact" data-cursor="View"><figure><img src="../assets/corporate-talk.jpg" alt="A speaker addressing a room" loading="lazy"></figure><span class="moment__cap"><b>The launch</b><i>Corporate</i></span></a>
+  </div>
+</section>
+
+<!-- Process: stacked cards -->
+<section class="process" id="process">
+  <div class="process__head">
+    <p class="label">How it works</p>
+    <h2 class="h-big">Four steps.<br>Zero stress.</h2>
+  </div>
+  <div class="stack">
+    <article class="stack__card" style="--i:0">
+      <span class="stack__n">01</span>
+      <h3>Listen</h3>
+      <p>A conversation about the people, the occasion and the feeling you want in the room. No brief required. We ask the questions.</p>
+      <span class="stack__meta">Week 1</span>
+    </article>
+    <article class="stack__card" style="--i:1">
+      <span class="stack__n">02</span>
+      <h3>Design</h3>
+      <p>A visual concept: venue, light plan, florals, entertainment and the evening hour by hour. One clear budget, no surprises.</p>
+      <span class="stack__meta">Weeks 2–3</span>
+    </article>
+    <article class="stack__card" style="--i:2">
+      <span class="stack__n">03</span>
+      <h3>Build</h3>
+      <p>Venue, suppliers, production and permits handled by one team. You approve, we run. Rehearsed to the minute.</p>
+      <span class="stack__meta">Up to the day</span>
+    </article>
+    <article class="stack__card stack__card--ink" style="--i:3">
+      <span class="stack__n">04</span>
+      <h3>Show</h3>
+      <p>On the night, we are in the room. Cues, timing, guests, weather. You are a guest at your own event.</p>
+      <span class="stack__meta">The night</span>
+    </article>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="why">
+  <p class="label">Why Lume</p>
+  <ul class="why__list">
+    <li><b>Personalised concept &amp; design</b><span>Every detail crafted to reflect your story and style.</span></li>
+    <li><b>Unique &amp; exclusive locations</b><span>From hidden gems to iconic venues across Dubai and the UAE.</span></li>
+    <li><b>Entertainment for any mood</b><span>Live performances, fireworks and drone spectacles, tailored to your guests.</span></li>
+    <li><b>Tailored support</b><span>One point of contact from the first call to the last cue.</span></li>
+    <li><b>Professional team &amp; partners</b><span>A strong network of experts and trusted partners, dedicated to excellence.</span></li>
+    <li><b>A positive atmosphere</b><span>Smiles, emotion and a stress-free journey to your perfect event.</span></li>
+  </ul>
+</section>
+
+<!-- Founder -->
+<section class="founder" id="founder">
+  <figure class="founder__img" data-reveal><img src="../assets/alina.jpg" alt="Alina, founder of Lume Events"></figure>
+  <div class="founder__text">
+    <p class="label">The founder</p>
+    <h2 class="h-big">Alina</h2>
+    <p class="founder__bio">Since 2020, Alina has been elevating the art of creating unforgettable moments in Dubai. Her portfolio includes everything from intimate beachside proposals to helicopter surprises over the Burj Al Arab, and weddings at the UAE's most prestigious venues.</p>
+    <p class="founder__bio">Every great event begins with great partnerships: visionary clients and trusted partners who share one passion for turning ideas into moments that last a lifetime.</p>
+    <a class="pill pill--ink" href="#contact" data-magnet><span>Talk to Alina</span></a>
+  </div>
+</section>
+
+<div class="ticker ticker--big" aria-hidden="true">
+  <div class="ticker__track ticker__track--slow" id="ticker2">
+    <span>Make it unforgettable</span><span>✺</span><span>Make it unforgettable</span><span>✺</span><span>Make it unforgettable</span><span>✺</span><span>Make it unforgettable</span><span>✺</span>
+  </div>
+</div>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="contact__text">
+    <p class="label">Start planning</p>
+    <h2 class="h-big">Tell us the date.<br>We'll bring the night.</h2>
+    <ul class="contact__list">
+      <li><span>Email</span><a href="mailto:hello@lumeevents.ae">hello@lumeevents.ae</a></li>
+      <li><span>WhatsApp</span><a href="https://wa.me/971500000000" target="_blank" rel="noopener">+971 50 000 0000</a></li>
+      <li><span>Instagram</span><a href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener">@lumeeventsae</a></li>
+      <li><span>Studio</span><b>Dubai, United Arab Emirates</b></li>
+    </ul>
+  </div>
+  <form class="form" action="mailto:hello@lumeevents.ae" method="post" enctype="text/plain">
+    <label class="field"><span>Your name</span><input name="name" type="text" autocomplete="name" required></label>
+    <label class="field"><span>Email or phone</span><input name="contact" type="text" required></label>
+    <div class="field__row">
+      <label class="field"><span>Occasion</span><select name="occasion"><option>Wedding</option><option>Proposal</option><option>Corporate event</option><option>Birthday or celebration</option><option>Baby shower</option><option>Kids' birthday</option><option>Something else</option></select></label>
+      <label class="field"><span>Date</span><input name="date" type="date"></label>
+    </div>
+    <label class="field"><span>Guests</span><input name="guests" type="number" min="2" placeholder="120"></label>
+    <label class="field"><span>The feeling you want</span><textarea name="message" rows="3" placeholder="Bold, loud, unforgettable. 200 guests, rooftop."></textarea></label>
+    <button class="pill pill--ink pill--lg pill--full" type="submit" data-magnet><span>Send enquiry</span></button>
+  </form>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__big" id="footerBig" data-text="LUME" aria-hidden="true">LUME</div>
+  <div class="footer__row">
+    <span>© 2026 Lume Events · Dubai</span>
+    <nav aria-label="Footer"><a href="https://www.instagram.com/lumeeventsae/" target="_blank" rel="noopener">Instagram</a><a href="mailto:hello@lumeevents.ae">Email</a><a href="../">Concept 1 ↗</a></nav>
+    <span>Unforgettable, by design.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="main.js"></script>
+<script type="module" src="silk.js"></script>
+</body>
+</html>

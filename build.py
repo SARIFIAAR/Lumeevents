@@ -30,3 +30,23 @@ shutil.copy(root / 'favicon.ico', root / 'dist/favicon.ico')
 shutil.copytree(root / 'assets', root / 'dist/assets', dirs_exist_ok=True)
 (root / 'dist/artifact.html').write_text(head.strip() + '\n' + body.strip() + '\n')
 print('built dist/index.html and dist/artifact.html')
+
+# ---------- Concept 2 ----------
+o = root / 'option-2'
+h2 = (o / 'index.html').read_text()
+h2 = h2.replace('<link rel="stylesheet" href="style.css">', '<style>\n' + (o / 'style.css').read_text() + '\n</style>')
+h2 = h2.replace('<script src="main.js"></script>', '<script>\n' + (o / 'main.js').read_text() + '\n</script>')
+h2 = h2.replace('<script type="module" src="silk.js"></script>', '<script type="module">\n' + (o / 'silk.js').read_text() + '\n</script>')
+head2 = re.search(r'<head>(.*?)</head>', h2, re.S).group(1)
+body2 = re.search(r'<body>(.*?)</body>', h2, re.S).group(1)
+head2 = re.sub(r'<meta (charset|name="viewport")[^>]*>\s*', '', head2)
+head2 = re.sub(r'<link rel="icon" href="../favicon.ico"[^>]*>\s*', '', head2)
+def inline2(m):
+    p = root / m.group(2).replace('../', '')
+    if not p.exists(): return m.group(0)
+    return m.group(1) + 'data:image/jpeg;base64,' + base64.b64encode(p.read_bytes()).decode() + '"'
+body2 = re.sub(r'(src=")(\.\./assets/[^"]+)"', inline2, body2)
+head2 = re.sub(r'(href=")(\.\./assets/[^"]+\.png)"', lambda m: m.group(1) + 'data:image/png;base64,' + base64.b64encode((root / m.group(2).replace('../', '')).read_bytes()).decode() + '"', head2)
+body2 = body2.replace('href="../"', 'href="https://sarifiaar.github.io/Lumeevents/"')
+(root / 'dist/option-2.html').write_text(head2.strip() + '\n' + body2.strip() + '\n')
+print('built dist/option-2.html')

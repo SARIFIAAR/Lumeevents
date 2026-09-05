@@ -11,6 +11,10 @@ js/main.js      preloader, cursor light, bokeh canvas, smooth scroll, reveals, h
 build.py        optional: inlines css/js into dist/ for a single-file deploy
 ```
 
+## Two concepts
+- **Concept 1** (root): dark stage, Bodoni, cursor light, Three.js particle hero. Live: https://sarifiaar.github.io/Lumeevents/
+- **Concept 2** (`option-2/`): light, sculptural, Bricolage Grotesque, a Three.js silk ribbon behind the whole page, curtain intro, pinned chapters, stacked process cards. Live: https://sarifiaar.github.io/Lumeevents/option-2/
+
 ## Stack
 - [GSAP 3.13](https://gsap.com) + ScrollTrigger + SplitText (free since 3.13), [Lenis](https://lenis.darkroom.engineering) smooth scroll (CDN, pinned versions)
 - [Three.js 0.170](https://threejs.org) WebGL hero (`js/three-hero.js`, ES module): 1,100 light particles with depth of field, cursor parallax and scroll dolly. Desktop only; the 2D canvas is the fallback
