@@ -101,7 +101,7 @@
 
     /* chapters: pinned storytelling */
     const chaptersEl = $('.chapters'), items = $$('.chapter'), imgs = $$('.chapters__img'), bar = $('#chapterBar');
-    const palettes = [ [0.055, .23, .19, .95, .84, .8], [.62, .2, .3, .98, .86, .78], [.06, .06, .05, .85, .72, .5], [.93, .6, .5, .12, .3, .35] ];
+    const palettes = [ [.055, .23, .19, .95, .84, .8], [.78, .3, .38, .98, .86, .78], [.07, .07, .06, .93, .93, .9], [.95, .55, .35, .16, .5, .55] ];
     const setChapter = (i) => {
       items.forEach((el, k) => el.classList.toggle('is-active', k === i));
       imgs.forEach((el, k) => el.classList.toggle('is-active', k === i));

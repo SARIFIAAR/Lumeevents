@@ -36,7 +36,7 @@ o = root / 'option-2'
 h2 = (o / 'index.html').read_text()
 h2 = h2.replace('<link rel="stylesheet" href="style.css">', '<style>\n' + (o / 'style.css').read_text() + '\n</style>')
 h2 = h2.replace('<script src="main.js"></script>', '<script>\n' + (o / 'main.js').read_text() + '\n</script>')
-h2 = h2.replace('<script type="module" src="silk.js"></script>', '<script type="module">\n' + (o / 'silk.js').read_text() + '\n</script>')
+h2 = h2.replace('<script type="module" src="confetti.js"></script>', '<script type="module">\n' + (o / 'confetti.js').read_text() + '\n</script>')
 head2 = re.search(r'<head>(.*?)</head>', h2, re.S).group(1)
 body2 = re.search(r'<body>(.*?)</body>', h2, re.S).group(1)
 head2 = re.sub(r'<meta (charset|name="viewport")[^>]*>\s*', '', head2)
