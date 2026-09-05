@@ -12,7 +12,8 @@ build.py        optional: inlines css/js into dist/ for a single-file deploy
 ```
 
 ## Stack
-- [GSAP 3](https://gsap.com) + ScrollTrigger, [Lenis](https://lenis.darkroom.engineering) smooth scroll (CDN, pinned versions)
+- [GSAP 3.13](https://gsap.com) + ScrollTrigger + SplitText (free since 3.13), [Lenis](https://lenis.darkroom.engineering) smooth scroll (CDN, pinned versions)
+- [Three.js 0.170](https://threejs.org) WebGL hero (`js/three-hero.js`, ES module): 1,100 light particles with depth of field, cursor parallax and scroll dolly. Desktop only; the 2D canvas is the fallback
 - Google Fonts: Bodoni Moda (display) + Instrument Sans (body)
 - Procedural "light study" visuals are drawn on `<canvas>` so the site works before real photography is added
 

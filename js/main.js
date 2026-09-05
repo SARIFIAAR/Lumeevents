@@ -10,6 +10,8 @@
   const fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
   const hasGsap = typeof gsap !== 'undefined';
   if (hasGsap && typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+  const hasSplit = hasGsap && typeof SplitText !== 'undefined';
+  if (hasSplit) gsap.registerPlugin(SplitText);
 
   /* ---------- Light scenes (procedural bokeh) ---------- */
   const SCENES = {
@@ -119,10 +121,12 @@
     };
     raf = requestAnimationFrame(loop);
     new IntersectionObserver(([e]) => {
-      visible = e.isIntersecting;
+      visible = e.isIntersecting && !gl;
       if (visible) { last = performance.now(); raf = requestAnimationFrame(loop); }
     }).observe(heroCanvas);
     window.addEventListener('resize', size);
+    let gl = false;
+    document.addEventListener('lume:gl', () => { gl = true; visible = false; cancelAnimationFrame(raf); $('#hero').classList.add('has-gl'); });
   }
 
   /* ---------- Cursor light ---------- */
@@ -222,7 +226,13 @@
 
   /* ---------- Preloader → hero sequence ---------- */
   const loader = $('#loader');
-  const heroWords = $$('[data-hero="w"]');
+  let heroWords = $$('[data-hero="w"]');
+  if (hasSplit) {
+    try {
+      const split = SplitText.create('.hero__title', { type: 'chars,words', charsClass: 'hero__char' });
+      heroWords = split.chars;
+    } catch (e) {}
+  }
   const glowEm = $('.hero__word--glow em');
   document.body.classList.add('is-loading');
 
@@ -242,7 +252,7 @@
     const g = cssVar('--glow-rgb') || '228,192,119';
     const tl = gsap.timeline({ onComplete: () => document.body.classList.remove('is-loading') });
     const d = fast ? .4 : 1;
-    tl.from(heroWords, { yPercent: 110, opacity: 0, duration: 1.2 * d, ease: 'power4.out', stagger: .07 * d })
+    tl.from(heroWords, { yPercent: 110, opacity: 0, duration: 1.2 * d, ease: 'power4.out', stagger: (hasSplit ? .028 : .07) * d })
       .fromTo(glowEm, { textShadow: `0 0 0px rgba(${g},0)`, color: cssVar('--taupe-2') },
         { textShadow: `0 0 60px rgba(${g},.75), 0 0 120px rgba(${g},.35)`, color: cssVar('--champagne'), duration: 1.6 * d, ease: 'power2.inOut' }, '-=.8')
       .from('[data-hero="eyebrow"]', { opacity: 0, y: 10, duration: .8 * d }, '-=1.2')
@@ -287,6 +297,19 @@
         onStart: () => el.classList.add('is-in')
       });
     });
+
+    /* headlines rise line by line behind a mask */
+    if (hasSplit) {
+      $$('.section-head h2, .contact__title, .founder__text h2, .venues__text h2, .feed__head h2').forEach((el) => {
+        SplitText.create(el, {
+          type: 'lines', mask: 'lines', linesClass: 'split-line', autoSplit: true,
+          onSplit: (self) => gsap.from(self.lines, {
+            yPercent: 110, duration: 1.3, ease: 'power4.out', stagger: .09,
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+          })
+        });
+      });
+    }
 
     /* manifesto: words light up as you read */
     const man = $('#manifesto');

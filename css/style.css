@@ -199,6 +199,9 @@ h3{font-size:clamp(26px,2.6vw,36px)}
 }
 .hero__photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:-3;opacity:var(--photo-opacity);filter:saturate(.85) contrast(1.05);will-change:transform}
 .hero__canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-2;mix-blend-mode:var(--canvas-blend)}
+.hero__gl{position:absolute;inset:0;width:100%!important;height:100%!important;z-index:-2;pointer-events:none}
+.hero.has-gl .hero__canvas{display:none}
+.split-line{display:block}
 .hero__halo{position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:
     radial-gradient(60% 50% at 50% 62%,rgba(201,164,92,.14),transparent 70%),
